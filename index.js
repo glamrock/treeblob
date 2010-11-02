@@ -80,7 +80,7 @@ $(function() {
 			window.path = path;
 			window.circle = circle
 
-			path.animate({ path: pathstr + "L" + ncx + " "  + ncy }, 1000, function() {//, rotation: "" + angle + " " + cx + " " + cy }, 1000, function() {
+			path.animate({ path: pathstr + "L" + ncx + " "  + ncy }, (length/(maxradius*4))*1000, function() {//, rotation: "" + angle + " " + cx + " " + cy }, 1000, function() {
 				var path = this;
 				var newcircle = path.target;
 
