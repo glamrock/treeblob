@@ -87,7 +87,7 @@ $(function() {
 				newcircle.show();
 				newcircle.scale(0.1, 0.1);
 				newcircle.attr('fill', 'rgb(255, 255, 255)');
-				newcircle.animate({ scale: "1.0 1.0", fill: randomRGB() }, 1000);
+				newcircle.animate({ scale: "1.0 1.0", fill: randomRGB() }, (newcircle.truerad/maxradius)*1000);
 				newcircle.click(clickCircle);
 
 			});
