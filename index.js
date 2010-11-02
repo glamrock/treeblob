@@ -68,6 +68,7 @@ $(function() {
 			// Create joining path
 			var pathstr = ("M" + cx + " " + cy); //+ "L" + ncx + " " + ncy);
 			var path = paper.path(pathstr);
+			path.attr('stroke', 'white');
 			path.origin = circle;
 			path.target = newcircle;
 			path.toBack();
