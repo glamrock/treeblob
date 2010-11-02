@@ -36,11 +36,11 @@ $(function() {
 		var circle = this;
 		var cx = circle.attr('cx'), cy = circle.attr('cy');
 
-		var i = 0;
-		while (i < 20) {
+		var i = 0, angles = 20;
+		while (i < angles) {
 			// Calculate new circle location and properties
 			var radius = Math.random()*(maxradius-minradius) + minradius;
-			var angle = (i/10)*360;
+			var angle = (i/angles)*360;
 			var length = radius*4;
 
 			var v = Vector.create([length, 0]);
