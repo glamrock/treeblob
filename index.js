@@ -1,48 +1,3 @@
-var Queue = function() {
-	var me = {};
-
-	me.queued = [];
-	me.argsets = [];
-
-	me.started = false;
-	
-	function next() {
-		if (me.queued.length > 0) {
-			me.queued.shift().apply(this, me.argsets.shift());
-			next();
-		} else {
-			me.started = false;
-		}
-	}
-
-	function start() {
-		console.log(me.started);
-		if (!me.started) {
-			me.started = true;
-			next();	
-		}
-	}
-
-	function add(func) {
-		me.queued.push(func);
-		me.argsets.push(Array.prototype.slice.call(arguments, 1));
-	}
-
-	$.extend(me, {
-		start: start,
-		next: next,
-		add: add,
-	});
-
-	return me;
-}
-
-function parseRotation(rotation) {
-	return rotation.split(' ').map(function(i) {
-		return parseFloat(i);
-	});
-}
-
 function circleOverlap(circ1, circ2) {
 	var cxd = circ1.attr('cx') - circ2.attr('cx')
 	var cyd = circ1.attr('cy') - circ2.attr('cy')
@@ -79,7 +34,6 @@ $(function() {
 
 	function clickCircle() {
 		var circle = this;
-		console.log(circles.length);
 		var cx = circle.attr('cx'), cy = circle.attr('cy');
 
 		var i = 0;
@@ -148,8 +102,6 @@ $(function() {
 	first.truerad = radius;
 
 	first.attr('fill', randomRGB());
-
-	first.tr
 
 	first.click(clickCircle);
 
