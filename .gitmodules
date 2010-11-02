@@ -1,0 +1,3 @@
+[submodule "raphael-zpd"]
+	path = raphael-zpd
+	url = git://github.com/somnidea/raphael-zpd.git

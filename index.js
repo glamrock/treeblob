@@ -15,17 +15,12 @@ function randomRGB() {
 	return "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
 }
 
-
 $(function() {
-	$('svg').width(window.innerWidth);
-	$('svg').height(window.innerHeight);
-	var paper = Raphael('svg', document.width, document.height);
-	paper.canvas.id = 'viewport';
+	var paper = Raphael(0, 0, document.width, document.height);
+
 	window.paper = paper;
 
-	var node = document.createElement('script');
-	node.src = "lib/SVGPan.js";
-	$('svg').get(0).appendChild(node);
+	paper.ZPD({ zoom: true, pan: true, drag: false });
 
 	var minradius = 50;
 	var maxradius = 150;
