@@ -20,7 +20,7 @@ $(function() {
 
 	window.paper = paper;
 
-	paper.ZPD({ zoom: true, pan: true, drag: false });
+	zpd = new RaphaelZPD(paper, { zoom: true, pan: true, drag: false });
 
 	var minradius = 50;
 	var maxradius = 150;
